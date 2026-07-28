@@ -1,0 +1,72 @@
+:root {
+  --bg: #0f1117;
+  --card: #1a1d27;
+  --border: #2a2e3a;
+  --text: #e6e8ee;
+  --muted: #9aa0ad;
+  --accent: #6c8cff;
+  --accent-fg: #fff;
+  --code: #0b0d12;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.page { max-width: 860px; margin: 0 auto; padding: 40px 20px 80px; }
+
+header h1 { margin: 0 0 6px; font-size: 28px; }
+.sub { color: var(--muted); margin: 0 0 24px; }
+
+.ask { display: flex; gap: 10px; margin-bottom: 12px; }
+.ask textarea {
+  flex: 1; resize: vertical; padding: 12px; border-radius: 10px;
+  border: 1px solid var(--border); background: var(--card); color: var(--text);
+  font-size: 15px; font-family: inherit;
+}
+.ask button {
+  padding: 0 20px; border: none; border-radius: 10px;
+  background: var(--accent); color: var(--accent-fg); font-weight: 600;
+  cursor: pointer; white-space: nowrap;
+}
+.ask button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.examples { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.chip {
+  background: var(--card); border: 1px solid var(--border); color: var(--muted);
+  padding: 6px 12px; border-radius: 20px; font-size: 13px; cursor: pointer;
+}
+.chip:hover { color: var(--text); border-color: var(--accent); }
+
+.schema { margin-bottom: 20px; color: var(--muted); }
+.schema summary { cursor: pointer; }
+.schema pre, .sql {
+  background: var(--code); border: 1px solid var(--border); border-radius: 10px;
+  padding: 14px; overflow-x: auto; font-size: 13px; line-height: 1.5;
+}
+
+.error {
+  background: #3a1a1a; border: 1px solid #6b2b2b; color: #ffb4b4;
+  padding: 12px; border-radius: 10px;
+}
+
+.result section { margin-bottom: 24px; }
+.result h2 { font-size: 16px; margin: 0 0 8px; color: var(--muted); }
+
+.selfcorrect {
+  background: #2a2410; border: 1px solid #5c4d16; color: #f0d98a;
+  padding: 12px 14px; border-radius: 10px; margin-bottom: 24px; font-size: 14px;
+}
+.selfcorrect ul { margin: 8px 0 0; padding-left: 18px; }
+.selfcorrect code { color: #ffcf6b; }
+
+.tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; }
+table { border-collapse: collapse; width: 100%; font-size: 14px; }
+th, td { padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--border); }
+th { background: var(--card); color: var(--muted); position: sticky; top: 0; }
+tr:last-child td { border-bottom: none; }

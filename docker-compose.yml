@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:16
+    container_name: ai_sql_db
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin
+      POSTGRES_DB: company
+    ports:
+      - "5433:5432"
+    volumes:
+      - ./db/init:/docker-entrypoint-initdb.d
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
